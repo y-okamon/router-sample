@@ -1,5 +1,5 @@
 <template>
   <div class="user-profile">
-    <h1>UserProfile.vue template</h1>
+    <h2>UserProfile.vue template</h2>
   </div>
 </template>

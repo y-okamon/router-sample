@@ -1,29 +1,33 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import User from '@/views/User.vue'
+import UserHome from '@/views/UserHome.vue'
+import UserProfile from '@/views/UserProfile.vue'
+import UserPosts from '@/views/UserPosts.vue'
 
 Vue.use(VueRouter)
 
   const routes = [
   {
-    path: '/user/:id', name: 'User', component: () => import('@/views/User.vue'),
+    path: '/user/:id', name: 'User', component: User,
     children: [
       {
         // /user/:id がマッチした時に
         // UserHome は User の <router-view> 内部で描画されます
         path: '',
-        component: () => import('@/views/UserHome.vue')
+        component: UserHome
       },
       {
         // /user/:id/profile にマッチした時に
         // UserProfile は User の <router-view> 内部で描画されます
         path: 'profile',
-        component: () => import('@/views/UserProfile.vue')
+        component: UserProfile
       },
       {
-        // /user/:id/profile にマッチした時に
+        // /user/:id/posts にマッチした時に
         // UserPosts は User の <router-view> 内部で描画されます
         path: 'posts',
-        component: () => import('@/views/UserPosts.vue')
+        component: UserPosts
       }
     ]
   }
